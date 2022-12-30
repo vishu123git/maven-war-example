@@ -7,11 +7,6 @@ pipeline{
         string defaultValue: '', description: 'Please enter branch name', name: 'GitBranch'
     }
     stages{
-        stage('checkout from git'){
-            steps{
-            git branch: params.GitBranch, credentialsId: 'github', url: 'https://github.com/vishu123git/maven-war-example.git'
-            }
-        }
         stage('Build using Maven'){
             steps{
                 sh 'mvn clean package'
