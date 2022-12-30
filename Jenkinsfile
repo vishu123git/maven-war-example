@@ -3,9 +3,6 @@ pipeline{
     options {
         buildDiscarder(logRotator(numToKeepStr: '5',daysToKeepStr: '15', artifactNumToKeepStr: '',artifactDaysToKeepStr: ''))
     }
-    parameters {
-        string defaultValue: '', description: 'Please enter branch name', name: 'GitBranch'
-    }
     stages{
         stage('Build using Maven'){
             steps{
